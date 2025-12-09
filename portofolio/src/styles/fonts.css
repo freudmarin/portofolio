@@ -1,0 +1,79 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+
+/* Base text */
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #e8ecf3;
+  background: #0b0f16;
+  margin: 0;
+}
+
+/* General headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #e8ecf3;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  text-shadow: 0 0 12px rgba(79,248,210,0.20);
+}
+
+/* Section title style */
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.4rem;
+}
+h3 {
+  font-size: 1.9rem;
+}
+
+/* Fancy hero title (gradient neon) */
+.fancy {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  background: linear-gradient(90deg, #4ff8d2, #73f7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 16px rgba(79,248,210,0.3);
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+/* Hero subtitle */
+.large {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #b8c3d6;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .fancy {
+    font-size: 2.2rem;
+  }
+
+  .large {
+    font-size: 1.25rem;
+  }
+}

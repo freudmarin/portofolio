@@ -1,0 +1,83 @@
+// Portfolio projects data for the app
+// Each project includes title, description, links, tags, and type
+
+export type Project = {
+  title: string;
+  description: string;
+  image?: string;
+  links: { label: string; url: string }[];
+  tags: string[];
+  type: 'main' | 'frontend-learning' | 'fullstack' | 'contractor';
+};
+
+export const projects: Project[] = [
+  {
+    title: 'Trading Intelligence Platform at Adus Technologies',
+    description: 'Backend for crypto & forex signals, with RabbitMQ, WebSockets, push notifications, Coinbase API integration, and community chat.',
+    links: [
+      { label: 'Project', url: 'https://www.linkedin.com/in/marin-dulja/details/projects/' }
+    ],
+    tags: [ 'Backend', 'Java', 'Spring Boot', 'MongoDB','PostgreSQL', 'RabbitMQ', 'WebSockets','API Integration','Contractor'],
+    type: 'contractor',
+  },
+  {
+    title: 'Personal Finance Tracker (Fullstack)',
+    description:
+      'A fullstack personal finance tracker currently in development. Frontend built with React.js and Tailwind, backend with Java, Spring Boot, Hibernate, JPA, and Docker.',
+    links: [
+      { label: 'Live Site', url: 'https://personal-finances-01.netlify.app/' },
+      { label: 'GitHub Front-End', url: 'https://github.com/freudmarin/personal-finance-tracker' },
+      { label: 'GitHub Back-End', url: 'https://github.com/freudmarin/personal-finance-tracker-be' }
+    ],
+    tags: ['React', 'Tailwind', 'Java', 'Spring Boot', 'Hibernate', 'JPA', 'Docker', 'Fullstack'],
+    type: 'fullstack',
+  },
+  {
+    title: 'Trattoria Verde Restaurant Page',
+    description:
+      'A stylish contact page for a restaurant, built to practice frontend skills and UI/UX. Features a modern form and responsive design.',
+    links: [
+      { label: 'Live Site', url: 'https://trattoriaverde.netlify.app/contact.html' }
+    ],
+    tags: ['HTML', 'CSS', 'JavaScript', 'Frontend'],
+    type: 'frontend-learning',
+  },
+  // ...existing main projects from your portfolio...
+  
+  {
+    title: 'Tiger Project at Candidatis',
+    description: 'Web Crawler developed for Candidatis.net, automating job ads data extraction and processing',
+    links: [
+      { label: 'Candidatis Crawler Website', url: 'https://www.candidatis.net/crawler.html' }
+    ],
+    tags: ['Backend', 'Web Crawler', 'Java', 'Spring Boot', 'Contractor'],
+    type: 'contractor',
+  },
+  {
+    title: 'Therapism',
+    description: 'Mental health platform, built with Java, Spring Boot, PostgreSQL, and Spring AI.',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/freudmarin/Therapism' }
+    ],
+    tags: ['Personal Project', 'Java', 'Spring Boot', 'PostgreSQL', 'Spring AI', 'Backend'],
+    type: 'main',
+  },
+  {
+    title: 'Wikloud',
+    description: 'Microservice architecture backend for Sabanet Albania, using Spring Cloud and Spring Boot. Alarm management system for MyPumaSecurity, enabling monitoring and control of alarm systems.',
+    links: [
+      { label: 'Company', url: 'https://www.sabanet.it/' }
+    ],
+    tags: ['Full Time Job', 'Spring Cloud', 'Spring Boot', 'Microservices', 'Alarm Management'],
+    type: 'main',
+  },
+  {
+    title: 'Quotes Social Network',
+    description: 'Quote sharing platform with authentication, posting, commenting, and liking features.',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/freudmarin/QuotesSocialNetworkBE' }
+    ],
+    tags: ['Personal Project', 'Social Network', 'Backend', 'Java', 'API integration','Spring Boot', 'Hibernate', 'JPA'],
+    type: 'main',
+  },
+];
