@@ -5,6 +5,8 @@ const sections = [
   { label: 'About me', href: '#about' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Hard Skills', href: '#hard-skills' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Soft Skills', href: '#soft-skills' },
   { label: 'Education', href: '#education' },
   { label: 'Connect', href: '#connect' },

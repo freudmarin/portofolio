@@ -25,7 +25,7 @@ What stood out most was Marin’s positive attitude and professionalism. He was 
 
 export default function Testimonials() {
 	return (
-		<section className="testimonials-section">
+		<section id="testimonials" className="testimonials-section">
 			<h2
 				className="section-title"
 				style={{

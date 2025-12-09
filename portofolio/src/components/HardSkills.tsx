@@ -43,7 +43,7 @@ const hardSkills = [
 
 export default function HardSkills() {
   return (
-    <section className="hard-skills-section">
+    <section id="hard-skills" className="hard-skills-section">
       <h2 className="hard-skills-title">Hard Skills</h2>
       <div className="hard-skills-table">
         {hardSkills.map(({ category, skills }) => (
