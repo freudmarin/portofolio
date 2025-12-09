@@ -2,9 +2,6 @@ import React from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
 import AnimationWrapper from '../components/AnimationWrapper';
-import SoftSkills from '../components/SoftSkills';
-import Education from '../components/Education';
-import SocialCards from '../components/SocialCards';
 
 const Home: React.FC = () => {
    return (

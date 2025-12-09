@@ -22,7 +22,6 @@ const TopNavbar: React.FC = () => {
       .filter((el): el is HTMLElement => !!el);
     if (!sectionEls.length) return;
     const handleScroll = () => {
-      const scrollY = window.scrollY;
       const offsets = sectionEls.map(el => {
         const rect = el.getBoundingClientRect();
         return Math.abs(rect.top - 80); // 80px offset for navbar height
