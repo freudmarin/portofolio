@@ -36,7 +36,7 @@ const experiences = [
 
 const ExperienceShort: React.FC = () => (
   <section id="experience" className="experience-section">
-    <h2 className="section-title" style={{ textAlign: 'center', color: 'var(--neon)', fontWeight: 800, fontSize: '2.2rem', marginBottom: '1.2rem' }}>Work Experience</h2>
+    <h2 className="section-title" style={{ textAlign: 'center', color: '#fff', fontWeight: 800, fontSize: '2.2rem', marginBottom: '1.2rem' }}>Work Experience</h2>
     <div className="experience-list">
       {experiences.map((exp, idx) => (
         <div className="experience-card" key={idx}>

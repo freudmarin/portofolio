@@ -10,7 +10,7 @@ const Home: React.FC = () => {
    return (
       <AnimationWrapper>
          <section id="projects" className="container">
-            <h2 className="fancy">Projects</h2>
+            <h2 className="fancy" style={{color: '#fff'}}>Projects</h2>
             <div className="project-grid">
                {projects.map((project) => (
                   <ProjectCard key={project.title} project={project} />

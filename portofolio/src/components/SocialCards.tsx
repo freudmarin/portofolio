@@ -25,7 +25,7 @@ const socials = [
 
 const SocialCards: React.FC = () => (
   <section id="connect" className="social-section">
-    <h2 className="section-title" style={{ textAlign: 'center', color: 'var(--neon)', fontWeight: 800, fontSize: '2.2rem', marginBottom: '1.2rem' }}>Connect</h2>
+    <h2 className="section-title" style={{ textAlign: 'center', color: '#fff', fontWeight: 800, fontSize: '2.2rem', marginBottom: '1.2rem' }}>Connect</h2>
     <div className="social-list">
       {socials.map((s, idx) => (
         <a className="social-card" href={s.url} target="_blank" rel="noopener noreferrer" key={idx}>
