@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
          initial={{ opacity: 0, y: 30 }}
          animate={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.7, ease: 'easeOut' }}
-         style={{ textAlign: 'center', padding: '2rem 0', fontSize: '1.25rem', color: '#888' }}
+         style={{ textAlign: 'center', padding: '2rem 0', fontSize: '1.25rem', color: '#f1e9e9ff' }}
       >
          &copy; {new Date().getFullYear()} Marin Dulja &mdash; Portfolio
       </motion.footer>

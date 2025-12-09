@@ -619,14 +619,14 @@ box-shadow: 0 0 28px rgba(79,248,210,0.55);
 footer {
 text-align: center;
 padding: 2.5rem 0;
-color: var(--text-soft);
-border-top: 1px solid rgba(79,248,210,0.12);
+color: #fff;
+border-top: 1px solid #e9efee1f;
 margin-top: 5rem;
 font-family: 'Montserrat', 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 font-size: 1.08rem;
 font-weight: 500;
 letter-spacing: 0.03em;
-text-shadow: 0 2px 8px rgba(91,231,196,0.08);
+text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
 }
 
 /* ----------------- RESPONSIVE ----------------- */
