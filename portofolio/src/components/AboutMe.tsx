@@ -39,17 +39,28 @@ const AboutMe: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" className="about-section">
-      {displayed.map((line, i) => (
-        <p
-          key={i}
-          className="about-text about-animate"
-          style={{ color: 'var(--text-soft)', fontSize: '1.35rem', lineHeight: 1.6, margin: '0 auto', maxWidth: 700, minHeight: '2.2em' }}
-        >
-          {line}
-          {i === activeLine && line.length < aboutText[i].length && <span className="blinking-cursor">|</span>}
-        </p>
-      ))}
+    <section id="about" className="hero-with-photo-section">
+      <div className="hero-content">
+        <div className="hero-photo">
+          <img 
+            src="/photo_portofolio.jpg" 
+            alt="Marin Dulja - Software Engineer" 
+            className="profile-photo"
+          />
+        </div>
+        <div className="hero-text">
+          {displayed.map((line, i) => (
+            <p
+              key={i}
+              className="about-text about-animate"
+              style={{ color: 'var(--text-soft)', fontSize: '1.35rem', lineHeight: 1.6, minHeight: '2.2em' }}
+            >
+              {line}
+              {i === activeLine && line.length < aboutText[i].length && <span className="blinking-cursor">|</span>}
+            </p>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

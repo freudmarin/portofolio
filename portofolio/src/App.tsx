@@ -10,6 +10,7 @@ import ExperienceShort from './components/ExperienceShort';
 import HardSkills from './components/HardSkills';
 import ContactButtons from './components/ContactButtons'; 
 import Testimonials from './components/Testimonials';
+import Certifications from './components/Certifications';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
       <Home />
       <ExperienceShort />
       <HardSkills />
+      <Certifications />
       <Testimonials /> 
       <SoftSkills />
       <Education />
