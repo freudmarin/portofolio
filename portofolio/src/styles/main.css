@@ -961,8 +961,22 @@ input, textarea {
 /* Prevent overflow on small screens */
 section, .section, .card, .project-card, .experience-card, .education-card, .testimonial-card, .social-card {
   max-width: 100vw;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
+/* Prevent per-character breaking in project titles/text */
+.project-title, .project-desc, .project-links a {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Ensure project card content wraps sanely */
+.project-card {
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 /* Make headings scale on mobile */
 h1, h2, h3, h4, h5, h6 {
@@ -1012,6 +1026,7 @@ body::-webkit-scrollbar {
 /* Project cards: responsive grid and card sizing */
 @media (max-width: 900px) {
   .project-grid {
+    display: grid;
     grid-template-columns: 1fr !important;
     gap: 1rem;
   }
@@ -1025,6 +1040,7 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 600px) {
   .project-grid {
+    display: grid;
     grid-template-columns: 1fr !important;
     gap: 0.7rem;
   }
