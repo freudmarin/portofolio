@@ -196,7 +196,7 @@ z-index: -1;
 	cursor: pointer;
 }
 .experience-card:active {
-	/* No animation */
+  transform: scale(0.99);
 }
 .experience-card:nth-child(1) { animation-delay: 0.1s; }
 .experience-card:nth-child(2) { animation-delay: 0.22s; }
@@ -1012,7 +1012,7 @@ body::-webkit-scrollbar {
 /* Project cards: responsive grid and card sizing */
 @media (max-width: 900px) {
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1rem;
   }
   .project-card {
@@ -1025,7 +1025,7 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 600px) {
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 0.7rem;
   }
   .project-card {
@@ -1051,6 +1051,7 @@ body::-webkit-scrollbar {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    justify-content: flex-start;
   }
   .top-navbar ul::-webkit-scrollbar {
     display: none;
