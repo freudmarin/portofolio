@@ -631,14 +631,122 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
 
 /* ----------------- RESPONSIVE ----------------- */
 
-@media (max-width: 900px) {
-.fancy { font-size: 2.4rem; }
-.large { font-size: 1.3rem; }
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .project-card {
+    padding: 1.2rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .testimonials-list {
+    gap: 1.2rem;
+  }
 }
-
+@media (max-width: 900px) {
+  .top-navbar ul {
+    gap: 1.2rem;
+  }
+  .experience-list, .education-list, .social-list {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .experience-card, .education-card, .social-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem;
+  }
+  .testimonials-list {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .testimonial-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.2rem;
+  }
+  .soft-skills-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .soft-skill-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+  .hard-skills-table {
+    display: block;
+  }
+  .hard-skills-row {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .hard-skills-category, .hard-skills-list {
+    display: block;
+    padding: 0.3rem 0;
+  }
+}
 @media (max-width: 600px) {
-.navbar { padding: 1rem; }
-.navbar a { margin-left: 1rem; }
+  .top-navbar {
+    padding: 0.3rem 0;
+  }
+  .top-navbar ul {
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .container {
+    padding: 0 4px;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .project-card {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .testimonials-list {
+    gap: 0.7rem;
+  }
+  .testimonial-card {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .soft-skills-list {
+    gap: 0.3rem;
+  }
+  .soft-skill-card {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.95rem;
+  }
+  .hard-skills-section {
+    padding: 0.7rem 0;
+  }
+  .hard-skills-category, .hard-skills-list {
+    font-size: 0.92rem;
+    padding: 0.2rem 0;
+  }
+  .education-card, .experience-card, .social-card {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .footer {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+  }
 }
 
 /* Ensure section backgrounds are transparent and not overlaying content */
