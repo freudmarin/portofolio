@@ -12,13 +12,13 @@ const experiences = [
     title: 'Backend Software Engineer (Contractor)',
     company: 'Noema Consulting',
     period: '08/2024 – 02/2025',
-    summary: 'Contributed to a large-scale banking system with 240+ microservices. Designed REST/GraphQL APIs and improved system stability.'
+    summary: 'Contributed to a large-scale banking system with 240+ microservices. Contributed to a large-scale banking platform with 240+ microservices. Designed REST/GraphQL APIs and improved service resilience and operational quality.'
   },
   {
     title: 'Backend Java Developer (Contractor)',
     company: 'Candidatis GmbH',
     period: '05/2023 – 12/2023',
-    summary: 'Maintained and optimized JobAd portal. Enhanced web crawler and mentored junior developer.'
+    summary: 'Improved and optimized the backend of an Austrian and German JobAd portal, enhanced the web crawler, and mentored a junior developer.'
   },
   {
     title: 'Java Developer',
