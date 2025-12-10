@@ -701,7 +701,10 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
 }
 @media (max-width: 900px) {
   .top-navbar ul {
-    gap: 1.2rem;
+    gap: 1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    padding: 0 0.5rem;
   }
   .experience-list, .education-list, .social-list {
     flex-direction: column;
@@ -713,6 +716,17 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
     max-width: 100%;
     width: 100%;
     padding: 1.2rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .project-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
   }
   .testimonials-list {
     flex-direction: column;
@@ -755,6 +769,15 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
   }
   .top-navbar ul {
     gap: 0.5rem;
+    font-size: 0.95rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .top-navbar-link {
+    padding: 0.4rem 0.7rem;
     font-size: 0.95rem;
   }
   .container {
@@ -984,4 +1007,56 @@ body {
 }
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* Project cards: responsive grid and card sizing */
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .project-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .project-card {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+/* Top navbar: responsive menu */
+@media (max-width: 900px) {
+  .top-navbar ul {
+    gap: 1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    padding: 0 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .top-navbar ul {
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .top-navbar ul::-webkit-scrollbar {
+    display: none;
+  }
+  .top-navbar-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.95rem;
+  }
 }
