@@ -583,59 +583,76 @@ box-shadow: 0 0 22px rgba(79,248,210,0.25);
 .tag { background: rgba(121,255,246,0.06); color: var(--text-soft); font-weight: 600; border-radius: 999px; padding: 0.28rem 0.6rem; font-size: 0.85rem; border: 1px solid rgba(121,255,246,0.22); box-shadow: none; }
 .tag:hover { border-color: rgba(121,255,246,0.45); color: var(--neon); }
 
-/* ----------------- PROJECT GRID (FULL RESPONSIVE FIX) ----------------- */
+/* ----------------- PROJECT GRID (CLEAN MOBILE-FIRST) ----------------- */
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
+  gap: 1rem;
   margin-top: 2rem;
   width: 100%;
+  /* Mobile first: single column */
+  grid-template-columns: 1fr;
 }
 
-/* Cards */
 .project-card {
   width: 100%;
-  max-width: 380px;
   background: linear-gradient(180deg, #111522, #1a1f2e);
   border-radius: var(--radius);
-  padding: 1.4rem;
+  padding: 1rem;
   border: 1px solid rgba(79,248,210,0.10);
   box-shadow: var(--shadow-card);
   transition: 0.25s ease;
+  /* Prevent text breaking */
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .project-card:hover {
   transform: translateY(-6px) scale(1.02);
 }
 
-/* Tablet fix */
-@media (max-width: 900px) {
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--neon);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(79,248,210,0.25);
+  /* Prevent character breaking */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  /* Prevent character breaking */
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
   .project-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .project-card {
+    padding: 1.3rem;
   }
 }
 
-/* Mobile fix */
-@media (max-width: 650px) {
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
   .project-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
   }
-
   .project-card {
-    padding: 1.1rem;
-    max-width: 100%;
-  }
-}
-
-/* Ultra-small devices (Galaxy A01, old iPhone SE) */
-@media (max-width: 420px) {
-  .project-card {
-    padding: 0.85rem;
-    font-size: 0.92rem;
+    padding: 1.5rem;
+    max-width: 400px;
+    justify-self: center;
   }
 }
 
@@ -644,16 +661,7 @@ box-shadow: 0 0 22px rgba(79,248,210,0.25);
 .project-links a { display: inline-block; color: #fff; text-decoration: none; font-weight: 800; border: 1px solid rgba(121,255,246,0.35); padding: .40rem .9rem; border-radius: 1rem; transition: background .2s ease, color .2s ease, border .2s ease; }
 .project-links a:hover { background: rgba(121,255,246,0.12); border-color: rgba(121,255,246,0.6); color: var(--neon); }
 
-/* Center single project card in a row (third row) */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 2.2rem;
-  justify-items: center;
-}
-.project-grid > :nth-child(7) {
-  grid-column: 2;
-}
+
 
 /* ----------------- BUTTONS ----------------- */
 
@@ -729,15 +737,7 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
     max-width: 100%;
     padding: 0 12px;
   }
-  .project-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.2rem;
-  }
-  .project-card {
-    padding: 1.2rem;
-    min-width: 0;
-    max-width: 100%;
-  }
+  /* Project grid handled by mobile-first approach above */
   .testimonials-list {
     gap: 1.2rem;
   }
@@ -760,17 +760,7 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
     width: 100%;
     padding: 1.2rem;
   }
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .project-card {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-  }
+  /* Project grid handled by mobile-first approach above */
   .testimonials-list {
     flex-direction: column;
     gap: 1.2rem;
@@ -826,14 +816,7 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
   .container {
     padding: 0 4px;
   }
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-  }
-  .project-card {
-    padding: 0.7rem;
-    font-size: 0.95rem;
-  }
+  /* Project grid handled by mobile-first approach above */
   .testimonials-list {
     gap: 0.7rem;
   }
