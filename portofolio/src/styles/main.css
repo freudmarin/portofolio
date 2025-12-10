@@ -113,57 +113,54 @@ z-index: -1;
 
 /* ----------------- TOP NAVBAR ----------------- */
 /* ----------------- TOP NAVBAR ----------------- */
+/* ----------------- TOP NAVBAR (FULL RESPONSIVE FIX) ----------------- */
 
 .top-navbar {
   position: sticky;
   top: 0;
   width: 100%;
   background: rgba(12,16,26,0.92);
+  padding: 0.6rem 1rem;
   z-index: 999;
   box-shadow: 0 2px 16px rgba(79,248,210,0.08);
-  padding: 0.6rem 1rem;
+  overflow: hidden;
 }
 
-/* Desktop menu */
 .top-navbar ul {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.6rem;
   margin: 0;
   padding: 0;
   list-style: none;
+  justify-content: center;
 }
 
-/* Navbar links */
 .top-navbar-link {
   color: var(--neon-blue);
   font-weight: 700;
-  font-size: 1.05rem;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  font-size: 1.05rem;
+  padding: 0.45rem 0.9rem;
+  white-space: nowrap;
   border-radius: 1rem;
   transition: 0.2s ease;
-  white-space: nowrap;
 }
+
 .top-navbar-link:hover {
-  background: rgba(123,255,246,0.10);
+  background: rgba(121,255,246,0.12);
   color: var(--neon);
-  box-shadow: 0 0 8px #5be7c4;
 }
 
-/* ----------------- MOBILE NAV ----------------- */
-@media (max-width: 750px) {
-
-  /* Convert navbar into horizontal scroll */
+/* MOBILE – horizontal scroll menu */
+@media (max-width: 760px) {
   .top-navbar ul {
-    gap: 0.6rem;
+    justify-content: flex-start;
     overflow-x: auto;
     white-space: nowrap;
+    gap: 0.8rem;
+    padding-bottom: 0.4rem;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    justify-content: flex-start;
-    padding: 0.4rem 0.2rem;
   }
 
   .top-navbar ul::-webkit-scrollbar {
@@ -172,7 +169,7 @@ z-index: -1;
 
   .top-navbar-link {
     font-size: 0.92rem;
-    padding: 0.45rem 0.8rem;
+    padding: 0.45rem 0.7rem;
   }
 }
 
@@ -586,53 +583,56 @@ box-shadow: 0 0 22px rgba(79,248,210,0.25);
 .tag { background: rgba(121,255,246,0.06); color: var(--text-soft); font-weight: 600; border-radius: 999px; padding: 0.28rem 0.6rem; font-size: 0.85rem; border: 1px solid rgba(121,255,246,0.22); box-shadow: none; }
 .tag:hover { border-color: rgba(121,255,246,0.45); color: var(--neon); }
 
-/* ----------------- PROJECT GRID ----------------- */
+/* ----------------- PROJECT GRID (FULL RESPONSIVE FIX) ----------------- */
 
-/* ----------------- PROJECT GRID ----------------- */
-
-/* Desktop & Tablet */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.8rem;
-  margin-top: 2rem;
   justify-items: center;
+  margin-top: 2rem;
+  width: 100%;
 }
 
-/* Project card */
+/* Cards */
 .project-card {
-  background: linear-gradient(180deg, #111522, #1a1f2e);
-  border-radius: var(--radius);
   width: 100%;
   max-width: 380px;
+  background: linear-gradient(180deg, #111522, #1a1f2e);
+  border-radius: var(--radius);
   padding: 1.4rem;
   border: 1px solid rgba(79,248,210,0.10);
   box-shadow: var(--shadow-card);
   transition: 0.25s ease;
-  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  border-color: rgba(79,248,210,0.35);
-  box-shadow: 0 0 22px rgba(79,248,210,0.25);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Tablet fix */
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
 }
 
 /* Mobile fix */
-@media (max-width: 750px) {
+@media (max-width: 650px) {
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1rem;
   }
 
   .project-card {
-    max-width: 100%;
     padding: 1.1rem;
+    max-width: 100%;
   }
 }
 
-/* Ultra-small screens fix */
-@media (max-width: 450px) {
+/* Ultra-small devices (Galaxy A01, old iPhone SE) */
+@media (max-width: 420px) {
   .project-card {
     padding: 0.85rem;
     font-size: 0.92rem;
@@ -949,29 +949,40 @@ text-shadow: 0 2px 8px rgba(237, 243, 241, 0.08);
   text-align: left;
 }
 
-/* Universal responsive rules */
+/* ----------------- UNIVERSAL / RESPONSIVE BASE (CLEAN) ----------------- */
+
+/* Box sizing */
+:root { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* Responsive root font-size (scales between 14px and 16px) */
 html {
-  box-sizing: border-box;
-  font-size: 16px;
+  font-size: clamp(14px, 1.6vw, 16px);
   scroll-behavior: smooth;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
+/* Body basics — avoid width:100vw to prevent horizontal scroll issues */
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;
-  font-size: 1rem;
+  font-size: 1rem;        /* 1rem follows html size above */
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* keep overflow-x hidden only if you still get small layout shifts;
+     otherwise remove it. If used, prefer: overflow-x: clip; */
+  /* overflow-x: hidden; */
 }
+
+/* Media elements */
 img, video, svg {
   max-width: 100%;
   height: auto;
   display: block;
 }
+
+/* Containers */
 .container, .main-content, .section {
   width: 100%;
   max-width: 1200px;
@@ -979,6 +990,8 @@ img, video, svg {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+/* Controls */
 button, .btn, a.button {
   min-width: 44px;
   min-height: 44px;
@@ -991,7 +1004,8 @@ input, textarea {
   padding: 0.5em;
   border-radius: 0.4em;
 }
-/* Responsive grid/flex helpers */
+
+/* Flex/grid helpers */
 .row, .flex-row {
   display: flex;
   flex-wrap: wrap;
@@ -1001,9 +1015,11 @@ input, textarea {
   flex: 1 1 0;
   min-width: 0;
 }
-/* Prevent overflow on small screens */
-section, .section, .card, .project-card, .experience-card, .education-card, .testimonial-card, .social-card {
-  max-width: 100vw;
+
+/* Prevent overflow on small screens for cards/sections */
+section, .section, .card, .project-card, .experience-card,
+.education-card, .testimonial-card, .social-card {
+  max-width: 100%;
   overflow-wrap: anywhere;
   word-break: normal;
   hyphens: auto;
@@ -1016,107 +1032,38 @@ section, .section, .card, .project-card, .experience-card, .education-card, .tes
   overflow-wrap: anywhere;
 }
 
-/* Ensure project card content wraps sanely */
-.project-card {
-  word-break: normal;
-  overflow-wrap: anywhere;
-}
-/* Make headings scale on mobile */
-h1, h2, h3, h4, h5, h6 {
+/* Headings scale safely */
+h1,h2,h3,h4,h5,h6 {
   word-break: break-word;
   line-height: 1.2;
+  margin-top: 0;
 }
+
+/* Mobile adjustments */
 @media (max-width: 600px) {
-  html {
-    font-size: 15px;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
+  html { font-size: 15px; } /* optional fallback */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+
   .container, .main-content, .section {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
   .row, .flex-row {
     flex-direction: column;
     gap: 0.7rem;
   }
+
   button, .btn, a.button {
     font-size: 1em;
     padding: 0.5em 0.7em;
   }
 }
+
 /* Touch target improvements */
 a, button, .btn {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-}
-/* Hide scrollbars on mobile */
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* Project cards: responsive grid and card sizing */
-@media (max-width: 900px) {
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
-  }
-  .project-card {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    gap: 0.7rem;
-  }
-  .project-card {
-    padding: 0.7rem;
-    font-size: 0.95rem;
-  }
-}
-/* Top navbar: responsive menu */
-@media (max-width: 900px) {
-  .top-navbar ul {
-    gap: 1rem;
-    font-size: 1rem;
-    flex-wrap: wrap;
-    padding: 0 0.5rem;
-  }
-}
-@media (max-width: 600px) {
-  .top-navbar ul {
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    justify-content: flex-start;
-  }
-  .top-navbar ul::-webkit-scrollbar {
-    display: none;
-  }
-  .top-navbar-link {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.95rem;
-  }
 }
