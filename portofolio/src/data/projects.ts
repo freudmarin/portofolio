@@ -17,7 +17,7 @@ export const projects: Project[] = [
     links: [
       { label: 'Project', url: 'https://www.linkedin.com/in/marin-dulja/details/projects/' }
     ],
-    tags: [ 'Backend', 'Java', 'Spring Boot', 'MongoDB','PostgreSQL', 'RabbitMQ', 'WebSockets','API Integration','Contractor'],
+    tags: ['Backend', 'Java', 'Spring Boot', 'MongoDB', 'PostgreSQL', 'RabbitMQ', 'WebSockets', 'API Integration', 'Contractor'],
     type: 'contractor',
   },
   {
@@ -26,10 +26,9 @@ export const projects: Project[] = [
       'A fullstack personal finance tracker currently in development. Frontend built with React.js and Tailwind, backend with Java, Spring Boot, Hibernate, JPA, and Docker.',
     links: [
       { label: 'Live Site', url: 'https://my-personal-finances.netlify.app/' },
-      { label: 'GitHub Front-End', url: 'https://github.com/freudmarin/personal-finance-tracker' },
-      { label: 'GitHub Back-End', url: 'https://github.com/freudmarin/personal-finance-tracker-be' }
+      { label: 'GitHub', url: 'https://github.com/freudmarin/personal-finance-tracker' }
     ],
-    tags: ['React', 'Tailwind', 'Java', 'Spring Boot', 'Hibernate', 'JPA', 'Docker', 'Fullstack'],
+    tags: ['React', 'Tailwind', 'Supabase', 'Full-Stack'],
     type: 'fullstack',
   },
   {
@@ -43,7 +42,7 @@ export const projects: Project[] = [
     type: 'frontend-learning',
   },
   // ...existing main projects from your portfolio...
-  
+
   {
     title: 'Tiger Project at Candidatis',
     description: 'Web Crawler developed for Candidatis.net, automating job ads data extraction and processing',
@@ -77,7 +76,7 @@ export const projects: Project[] = [
     links: [
       { label: 'GitHub', url: 'https://github.com/freudmarin/QuotesSocialNetworkBE' }
     ],
-    tags: ['Personal Project', 'Social Network', 'Backend', 'Java', 'API integration','Spring Boot', 'Hibernate', 'JPA'],
+    tags: ['Personal Project', 'Social Network', 'Backend', 'Java', 'API integration', 'Spring Boot', 'Hibernate', 'JPA'],
     type: 'main',
   },
 ];
