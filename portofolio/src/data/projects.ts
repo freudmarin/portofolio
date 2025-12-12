@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description:
       'A fullstack personal finance tracker currently in development. Frontend built with React.js and Tailwind, backend with Java, Spring Boot, Hibernate, JPA, and Docker.',
     links: [
-      { label: 'Live Site', url: 'https://personal-finances-01.netlify.app/' },
+      { label: 'Live Site', url: 'https://my-personal-finances.netlify.app/' },
       { label: 'GitHub Front-End', url: 'https://github.com/freudmarin/personal-finance-tracker' },
       { label: 'GitHub Back-End', url: 'https://github.com/freudmarin/personal-finance-tracker-be' }
     ],
