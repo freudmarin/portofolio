@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import type { Project } from '../data/projects';
+import GalleryModal from './GalleryModal';
 
 type ProjectCardProps = {
    project: Project;
@@ -13,25 +14,51 @@ const cardVariants = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
    const [zoomed, setZoomed] = useState(false);
+   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
    const cardRef = useRef<HTMLDivElement>(null);
 
-   const handleClick = () => {
+   const handleCardClick = () => {
       setZoomed(true);
-      setTimeout(() => setZoomed(false), 200); // Animation duration
+      setTimeout(() => setZoomed(false), 200);
+   };
+
+   const handleGalleryOpen = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (project.gallery && project.gallery.length > 0) {
+         setIsGalleryOpen(true);
+      }
    };
 
    return (
-      <motion.div
-         ref={cardRef}
-         className={`project-card${zoomed ? ' zoomed-inplace-card' : ''}`}
-         initial="hidden"
-         animate="visible"
-         variants={cardVariants}
-         transition={{ duration: 0.6, ease: 'easeOut' }}
-         whileHover={{ scale: 1.05, boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}
-         onClick={handleClick}
-         style={{ cursor: 'pointer' }}
-      >
+      <>
+         <motion.div
+            ref={cardRef}
+            className={`project-card${zoomed ? ' zoomed-inplace-card' : ''}`}
+            initial="hidden"
+            animate="visible"
+            variants={cardVariants}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}
+            onClick={handleCardClick}
+            style={{ cursor: 'pointer' }}
+         >
+            {project.gallery && project.gallery.length > 0 ? (
+               <div className="project-gallery" onClick={handleGalleryOpen}>
+                  <div className="gallery-container">
+                     <img
+                        src={project.gallery[0]}
+                        alt={`${project.title} - Featured screenshot`}
+                        loading="lazy"
+                     />
+                     <div className="gallery-overlay">
+                        <span className="gallery-hint">View Gallery</span>
+                     </div>
+                  </div>
+                  {project.gallery.length > 1 && (
+                     <div className="gallery-badge">{project.gallery.length}</div>
+                  )}
+               </div>
+            ) : null}
          <div className="project-title" style={{
             fontFamily: 'Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif',
             color: 'var(--neon)',
@@ -65,6 +92,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ))}
          </div>
       </motion.div>
+
+      {/* Gallery Modal - Only render for projects with gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+         <GalleryModal
+            images={project.gallery}
+            title={project.title}
+            isOpen={isGalleryOpen}
+            onClose={() => setIsGalleryOpen(false)}
+         />
+      )}
+      </>
    );
 };
 

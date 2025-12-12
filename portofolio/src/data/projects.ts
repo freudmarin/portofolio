@@ -4,7 +4,7 @@
 export type Project = {
   title: string;
   description: string;
-  image?: string;
+  gallery?: string[];
   links: { label: string; url: string }[];
   tags: string[];
   type: 'main' | 'frontend-learning' | 'fullstack' | 'contractor';
@@ -23,7 +23,8 @@ export const projects: Project[] = [
   {
     title: 'Personal Finance Tracker (Fullstack)',
     description:
-      'A fullstack personal finance tracker currently in development. Frontend built with React.js and Tailwind, backend with Java, Spring Boot, Hibernate, JPA, and Docker.',
+      'A fullstack personal finance tracker currently in development. Frontend built with React.js and Tailwind CSS. Backend powered by Supabase.',
+    gallery: ['/personal-finances-1.png', '/personal-finances-categories.png', '/personal-finances-2.png'],
     links: [
       { label: 'Live Site', url: 'https://my-personal-finances.netlify.app/' },
       { label: 'GitHub', url: 'https://github.com/freudmarin/personal-finance-tracker' }
