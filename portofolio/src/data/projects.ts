@@ -36,7 +36,7 @@ export const projects: Project[] = [
     title: 'ClearSight Clinic Website',
     description:
       'A responsive, production-ready single-page application showcasing modern frontend architecture and UX clarity. Features client-style multi-section layout with proper React Router configuration and Supabase backend integration.',
-    gallery: ['/clearsight-1.png', '/clearsight-2.png', '/clearsight-3.png'],
+    gallery: ['/clearsight-1.png', '/clearsight-2.png', '/clearsight-3.png', '/clearsight-4.png'],
     links: [
       { label: 'Live Site', url: 'https://clearsight-clinic.netlify.app/' }
     ],
