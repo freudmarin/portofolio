@@ -33,6 +33,17 @@ export const projects: Project[] = [
     type: 'fullstack',
   },
   {
+    title: 'ClearSight Clinic Website',
+    description:
+      'A responsive, production-ready single-page application showcasing modern frontend architecture and UX clarity. Features client-style multi-section layout with proper React Router configuration and Supabase backend integration.',
+    gallery: ['/clearsight-1.png', '/clearsight-2.png', '/clearsight-3.png'],
+    links: [
+      { label: 'Live Site', url: 'https://clearsight-clinic.netlify.app/' }
+    ],
+    tags: ['React', 'CSS', 'Supabase'],
+    type: 'fullstack',
+  },
+  {
     title: 'Trattoria Verde Restaurant Page',
     description:
       'A stylish contact page for a restaurant, built to practice frontend skills and UI/UX. Features a modern form and responsive design.',
