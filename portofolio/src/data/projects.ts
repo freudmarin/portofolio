@@ -38,7 +38,8 @@ export const projects: Project[] = [
       'A responsive, production-ready single-page application showcasing modern frontend architecture and UX clarity. Features client-style multi-section layout with proper React Router configuration and Supabase backend integration.',
     gallery: ['/clearsight-1.png', '/clearsight-2.png', '/clearsight-3.png', '/clearsight-4.png'],
     links: [
-      { label: 'Live Site', url: 'https://clearsight-clinic.netlify.app/' }
+      { label: 'Live Site', url: 'https://clearsight-clinic.netlify.app' },
+      { label: 'GitHub', url: 'https://github.com/freudmarin/eye-clinic-app' }
     ],
     tags: ['React', 'CSS', 'Supabase'],
     type: 'fullstack',
