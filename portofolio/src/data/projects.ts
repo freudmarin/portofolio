@@ -20,7 +20,7 @@ export const projects: Project[] = [
     title: 'Trading Intelligence Platform at Adus Technologies',
     description: 'Backend for crypto & forex signals, with RabbitMQ, WebSockets, push notifications, Coinbase API integration, and community chat.',
     links: [
-      { label: 'Project', url: 'https://www.linkedin.com/in/marin-dulja/details/projects/' }
+      { label: 'Live Site', url: 'https://xbratai.com/' }
     ],
     tags: ['Backend', 'Java', 'Spring Boot', 'MongoDB', 'PostgreSQL', 'RabbitMQ', 'WebSockets', 'API Integration', 'Contractor'],
     type: 'contractor',
