@@ -8,6 +8,11 @@ export type Project = {
   links: { label: string; url: string }[];
   tags: string[];
   type: 'main' | 'frontend-learning' | 'fullstack' | 'contractor';
+  badge?: {
+    text: string;
+    url?: string;
+    color?: 'blue' | 'green' | 'purple' | 'orange' | 'red';
+  };
 };
 
 export const projects: Project[] = [
@@ -24,13 +29,18 @@ export const projects: Project[] = [
     title: 'Personal Finance Tracker (Fullstack)',
     description:
       'A fullstack personal finance tracker currently in development. Frontend built with React.js and Tailwind CSS. Backend powered by Supabase.',
-    gallery: ['/personal-finances-1.png', '/personal-finances-categories.png', '/personal-finances-2.png'],
+    gallery: ['/personal-finances-1.png', '/personal-finances-2.png', '/personal-finances-3.png'],
     links: [
-      { label: 'Live Site', url: 'https://my-personal-finances.netlify.app/' },
+      { label: 'Live Site', url: 'https://personal-finances.app/' },
       { label: 'GitHub', url: 'https://github.com/freudmarin/personal-finance-tracker' }
     ],
     tags: ['React', 'Tailwind', 'Supabase', 'Full-Stack'],
     type: 'fullstack',
+    badge: {
+      text: 'Featured on FIP.al • 3000+ Daily Views',
+      url: 'https://www.fip.al/pages/mjete-financiare.html',
+      color: 'green',
+    },
   },
   {
     title: 'ClearSight Clinic Website',

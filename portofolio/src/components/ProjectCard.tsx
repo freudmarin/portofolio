@@ -59,6 +59,59 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   )}
                </div>
             ) : null}
+         
+         {/* Featured Badge */}
+         {project.badge && (
+            <div style={{
+               marginBottom: '0.75rem',
+               display: 'inline-block'
+            }}>
+               <a
+                  href={project.badge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  style={{
+                     display: 'inline-flex',
+                     alignItems: 'center',
+                     gap: '6px',
+                     padding: '6px 12px',
+                     borderRadius: '6px',
+                     fontSize: '0.85rem',
+                     fontWeight: 600,
+                     fontFamily: 'Montserrat, Inter, sans-serif',
+                     background: project.badge.color === 'purple' 
+                        ? 'linear-gradient(135deg, #5a4fcf 0%, #5e3a8e 100%)'
+                        : project.badge.color === 'blue'
+                        ? 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)'
+                        : project.badge.color === 'green'
+                        ? 'linear-gradient(135deg, #059669 0%, #047857 100%)'
+                        : project.badge.color === 'orange'
+                        ? 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)'
+                        : 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
+                     color: '#fff',
+                     textDecoration: 'none',
+                     boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                     transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                     cursor: 'pointer'
+                  }}
+                  onMouseEnter={(e) => {
+                     e.currentTarget.style.transform = 'translateY(-2px)';
+                     e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
+                  }}
+                  onMouseLeave={(e) => {
+                     e.currentTarget.style.transform = 'translateY(0)';
+                     e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+                  }}
+               >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  {project.badge.text}
+               </a>
+            </div>
+         )}
+
          <div className="project-title" style={{
             fontFamily: 'Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif',
             color: 'var(--neon)',
