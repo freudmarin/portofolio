@@ -19,6 +19,7 @@ export const projects: Project[] = [
   {
     title: 'Trading Intelligence Platform at Adus Technologies',
     description: 'Backend for crypto & forex signals, with RabbitMQ, WebSockets, push notifications, Coinbase API integration, and community chat.',
+    gallery: ['/xbrat-ai.png'],
     links: [
       { label: 'Live Site', url: 'https://xbratai.com/' }
     ],

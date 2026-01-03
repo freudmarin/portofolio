@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type GalleryModalProps = {
@@ -56,10 +57,13 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ images, title, isOpen, onCl
     }
   };
 
-  return (
-    <AnimatePresence>
+  if (typeof window === 'undefined') return null;
+
+  const modalContent = (
+    <AnimatePresence mode="wait">
       {isOpen && (
         <motion.div
+          key="gallery-modal"
           className="gallery-modal-overlay"
           variants={overlayVariants}
           initial="hidden"
@@ -145,6 +149,8 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ images, title, isOpen, onCl
       )}
     </AnimatePresence>
   );
+
+  return createPortal(modalContent, document.body);
 };
 
 export default GalleryModal;
