@@ -44,6 +44,18 @@ export const projects: Project[] = [
     },
   },
   {
+    title: 'The Literary Haven',
+    description:
+      'A fullstack bookstore e-commerce platform featuring complete online shopping functionality with product browsing, cart management, and checkout flow. Built with React and Tailwind CSS for a modern, responsive interface, powered by Supabase for authentication and data management.',
+    gallery: ['/the-literary-haven-1.png', '/the-literary-haven-2.png'],
+    links: [
+      { label: 'Live Site', url: 'https://the-literary-heaven.netlify.app/' },
+      { label: 'GitHub', url: 'https://github.com/freudmarin/bookshop-ecommerce' }
+    ],
+    tags: ['React', 'Tailwind', 'Supabase', 'Full-Stack'],
+    type: 'fullstack',
+  },
+  {
     title: 'ClearSight Clinic Website',
     description:
       'A responsive, production-ready single-page application showcasing modern frontend architecture and UX clarity. Features client-style multi-section layout with proper React Router configuration and Supabase backend integration.',
